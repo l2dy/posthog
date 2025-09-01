@@ -10,7 +10,7 @@ PERSONS_DB_MODELS = {
     "flatpersonoverride",  # Assuming app_label 'posthog'
     "featureflaghashkeyoverride",  # Assuming app_label 'posthog'
     "cohortpeople",  # Assuming app_label 'posthog'
-    "groups",  # Assuming app_label 'posthog'
+    "group",  # Assuming app_label 'posthog'
     "grouptypemapping",  # Assuming app_label 'posthog'
 }
 
