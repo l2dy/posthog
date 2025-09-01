@@ -1,4 +1,20 @@
 # posthog/person_db_router.py
+
+PERSONS_DB_MODELS = {
+    "person",
+    "persondistinctid",
+    "personlessdistinctid",  # Assuming app_label 'posthog'
+    "personoverridemapping",  # Assuming app_label 'posthog'
+    "personoverride",  # Assuming app_label 'posthog'
+    "pendingpersonoverride",  # Assuming app_label 'posthog'
+    "flatpersonoverride",  # Assuming app_label 'posthog'
+    "featureflaghashkeyoverride",  # Assuming app_label 'posthog'
+    "cohortpeople",  # Assuming app_label 'posthog'
+    "groups",  # Assuming app_label 'posthog'
+    "grouptypemapping",  # Assuming app_label 'posthog'
+}
+
+
 class PersonDBRouter:
     """
     A router to control all database operations on models in the persons database.
@@ -6,19 +22,6 @@ class PersonDBRouter:
 
     # Set of models (lowercase) that should live in the persons_db
     # Add other models from the plan here as needed.
-    PERSONS_DB_MODELS = {
-        "person",
-        "persondistinctid",
-        "personlessdistinctid",  # Assuming app_label 'posthog'
-        "personoverridemapping",  # Assuming app_label 'posthog'
-        "personoverride",  # Assuming app_label 'posthog'
-        "pendingpersonoverride",  # Assuming app_label 'posthog'
-        "flatpersonoverride",  # Assuming app_label 'posthog'
-        "featureflaghashkeyoverride",  # Assuming app_label 'posthog'
-        "cohortpeople",  # Assuming app_label 'posthog'
-        "groups",  # Assuming app_label 'posthog'
-        "grouptypemapping",  # Assuming app_label 'posthog'
-    }
     PERSONS_APP_LABEL = "posthog"  # Assuming all models are in the 'posthog' app
 
     def db_for_read(self, model, **hints):
@@ -88,4 +91,4 @@ class PersonDBRouter:
 
     def is_persons_model(self, model_name):
         # Check if the model name belongs to the persons_db models
-        return model_name in self.PERSONS_DB_MODELS
+        return model_name in PERSONS_DB_MODELS
