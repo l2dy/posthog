@@ -9,6 +9,7 @@ on:
         branches:
             - 'master'
             - 'jose-sequeira/paralellize-kafka-dedup'
+            - 'jose-sequeira/add-store-manager'
 jobs:
     build:
         name: build ${{ matrix.image }}
