@@ -10,6 +10,7 @@ on:
             - 'master'
             - 'jose-sequeira/paralellize-kafka-dedup'
             - 'jose-sequeira/add-store-manager'
+            - 'jose-sequeira/kafka-dedup-fix-partitions'
 jobs:
     build:
         name: build ${{ matrix.image }}
