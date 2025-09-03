@@ -50,6 +50,7 @@ import type {
     ExperimentFunnelsQuery,
     ExperimentMetric,
     ExperimentTrendsQuery,
+    ExternalDataSourceRevenueAnalyticsSettings,
     ExternalDataSourceType,
     FileSystemImport,
     HogQLQuery,
@@ -4731,6 +4732,7 @@ export interface ExternalDataSource {
     latest_error: string | null
     last_run_at?: Dayjs
     revenue_analytics_enabled: boolean
+    revenue_analytics_settings: ExternalDataSourceRevenueAnalyticsSettings
     schemas: ExternalDataSourceSchema[]
     sync_frequency: DataWarehouseSyncInterval
     job_inputs: Record<string, any>
